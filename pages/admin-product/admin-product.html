@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin-productos</title>
+    <link rel="icon" href="/assets/images/favicon.png">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <!-- SCRIPT DE GUARDA -->
+    <script src="/js/guard.js"></script>
+</head>
+<body>
+    <!-- ==================================================== HEADER =================================================== -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg main-navbar" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand me-0 me-md-3" href="/index.html"><img class="logo-header" src="/assets/images/Gaming-logo.png" alt="Logo de un joystick de consola"></a>
+                <h1 class="titulo-principal ms-lg-3">Gaming House</h1>
+                <button class="navbar-toggler boton-modificado" type="button" data-bs-toggle="collapse" data-bs-target="#compatibleContent" aria-controls="compatibleContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="main-menu-icon"><i class="fa-solid fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="compatibleContent">
+                    <ul id="nav-list" class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/contact/contact.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/about-us/about-us.html">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/register/register.html">Registro</a>
+                        </li>
+                    </ul>
+                    <div class="header-user">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    <div id="user-header-name">
+                        
+                    </div>
+                    <div id="user-action">
+
+                    </div>
+                    <!-- <img class="header-user-img" src="/assets/images/avatardefault.png" alt="Logo de usuario" > -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================================================== MAIN ========================================================= -->
+    <main class="main-container container-xl">
+        <div class="row admin-producto">
+            <div class="col-12 col-md-6">
+                <div class="container-form form-admin">
+                    <h1 class="titulo-form">Agregar juegos</h1>
+                    <form id="formularioProducto" class="formulario">
+                        <!--? INPUT-TITULO -->
+                        <label for="titulo">Nombre del juego</label>
+                        <input type="text" name="titulo" minlength="2" maxlength="80" autofocus required placeholder="Counter Strike 1.6" id="titulo">
+                        <!--? INPUT-IMAGEN -->
+                        <label for="imagenProducto">URL de la imagen</label>
+                        <input type="text" name="imagen" id="imagenProducto" placeholder="htpps://direccion-de-la-imagen.com" required minlength="3" maxlength="300">
+
+                        <div class="div-precio-categoria">
+                            <div>
+                                <!--? INPUT-PRECIO -->
+                                <label for="precio">Precio</label>
+                                <input type="number" name="precio" min="0" max="100000" placeholder="25000" step=".01" required id="precio">
+                            </div>
+                            <div>
+                                <!--? SECTION-CATEGORIA -->
+                                <label for="categoria">Categoria</label>
+                                <select name="categoria" required id="categoria">
+                                    <option disabled="true" selected="true" value="">Seleccionar</option>
+                                    <option value="Accion">Accion</option>
+                                    <option value="Aventura">Aventura</option>
+                                    <option value="Carreras">Carreras</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!--? TEXTAREA -->
+                        <label for="descripcion">Descripcion</label>
+                        <textarea name="descripcion" minlength="10" maxlength="500" placeholder="Escribir..." id="descripcion" cols="30" rows="5"></textarea>
+                        <!--? BOTON-SUBMIT -->
+                        <button class="btn-agregarJuego" type="submit">Agregar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <!--? FILTRAR -->
+                <div class="mb-3 div-filtrar">
+                    <label for="filtrar" class="form-label">Filtrar</label>
+                    <input type="text"
+                    class="input-filtrar" 
+                    id="filtrar" 
+                    placeholder="Nombre del juego"
+                    >
+                </div>
+                <!--? TABLA -->
+                <div class="table-responsive">
+                    <table class="table table-dark ">
+                        <thead>
+                            <tr class="row-header">
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Producto</th>
+                                <th class="description" scope="col">Descripcion</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Precio</th>
+                                <th class="head-acciones" scope="col"><i class="fa-solid fa-arrow-down"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+
+
+    <!-- ==================================================== FOOTER ======================================================== -->
+    <footer class="main-footer container-fluid">
+        <div class="footer-info row">
+            <section class="footer-section section-1 col-12 col-md-4">
+                <div class="footer-redes">
+                    <a class="link-redes" href="https://www.facebook.com/LATAMCallOfDutyMobile/?locale=es_LA" title="LATAMCallOfDutyMobile" target="_blank"><i class="fa-brands fa-square-facebook redes-icon facebook"></i><span>Facebook</span></a>
+                    <a class="link-redes" href="https://www.instagram.com/xboxarg/" title="xboxarg" target="_blank"><i class="fa-brands fa-instagram redes-icon instagram"></i><span>Instagram</span></a>
+                    <a class="link-redes" href="https://www.youtube.com/@xNavalha" title="youtube" target="_blank"><i class="fa-brands fa-youtube redes-icon youtube"></i><span>You Tube</span></a>
+                </div>
+            </section>
+            <section class="footer-section section-2 col-12 col-md-4">
+                <img class="logo-footer" src="/assets/images/Gaming-logo.png" alt="Logo de un joystick de consola">
+                <div><i class="fa-regular fa-copyright"></i></i> Copyright 2023 - Gaming House</div>
+            </section>
+            <section class="footer-section section-3 col-12 col-md-4">
+                <dl>
+                    <dt>LA EMPRESA</dt>
+                    <dd>Politica de Privacidad</dd>
+                    <dd>Termminos y Condiciones</dd>
+            
+                    <dt>CONTACTANOS</dt>
+                    <dd>011-52328016</dd>
+                </dl>
+            </section>
+        </div>
+        
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="/js/admin-product.js"></script>
+    <script src="/js/user-info.js"></script>
+</body>
+</html>

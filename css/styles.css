@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Moirai+One&family=Nunito:wght@400;600;800&family=Orbitron:wght@600;900&display=swap');
+
+body {
+    background-color: #10002B;
+    color: #E0F2F1;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TODO====================================================== HEADER-START ============================================================= */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-navbar {
+    padding: 0;
+    background-color: #000117;
+    border-bottom: solid 2px #A7FFEB;
+}
+.logo-header {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    filter: contrast(170%);
+    }
+
+.titulo-principal {
+    font-family: 'Moirai One', cursive;
+    color: #E830CE;
+    text-shadow: 0 0 6px #E830CE;
+    border: solid 1px #E830CE;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #E830CE, inset 0 0 8px #E830CE;
+    padding: 0 5px 5px;
+    font-weight: bold;
+    margin: auto 0;
+}    
+
+.main-navbar .nav-link  {
+    color:#64FFDA;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+}
+
+.main-navbar .nav-link.active {
+    background-color:  #1DE9B6;
+    color: #10002B;
+    padding-left: .5rem;
+    font-size: 20px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+}
+
+.boton-modificado {
+    border-color: #1DE9B6;
+}
+
+.boton-modificado:focus {
+    box-shadow: 0 0 5px #A7FFEB, inset 0 0 5px #A7FFEB;
+}
+
+.main-menu-icon {
+    color: #1DE9B6;
+}
+
+.header-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: #1DE9B6;
+    margin-bottom: .5rem;
+}
+
+.header-user i {
+    font-size: 1.5rem;
+}
+
+.header-user-img {
+    height: 46px;
+    width: 46px;
+}
+
+#user-header-name {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #E0F2F1;
+}
+
+.btn-nav-login, .btn-logout {
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: #331fe2;
+    cursor: pointer;
+    text-decoration: none;
+    color: #E0F2F1;
+}
+
+.btn-logout {
+    background-color: #EE0E0E;
+}
+/*? ================================== MODAL-LOGIN =============================== */
+.modal-content {
+    background-color: transparent;
+    border: none;
+    color: #E0F2F1;
+}
+
+.modal-header {
+    border: none;
+    padding: 10px 10px 0 0;
+}
+
+.btn-close {
+    color: #00FFFF;
+    border-radius: 50%;
+    padding: 10px;
+    border: solid 3px #00FFFF;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 12px  #00FFFF;
+}
+
+.btn-close:hover {
+    opacity: 1;
+    box-shadow: 0 0 15px 1px #00FFFF, inset 0 0 10px #00FFFF;
+    color: #00FFFF;
+}
+/* TODO==================================================== HEADER-END ================================================================= */
+/* !====================================================== CAROUSEL-START ============================================================== */
+.introduccion-div {
+    background-color: #000117c5;
+    padding: 1rem 6px;
+    top: 50%;
+    bottom: auto;
+    translate: 0 -50%;
+}
+
+.introduccion-div h5 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    background: linear-gradient(135deg, #EE0E0E 28%, #E0F2F1 28% 40%, #EE0E0E 40% 60%, #E0F2F1 60% 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.introduccion-div p {
+    margin-bottom: 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color: #64FFDA;
+}
+/* !======================================================== CAROUSEL-END ============================================================== */
+/* ?========================================================== MAIN-START ============================================================== */
+.main-container {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+.main-container .titulo-productos {
+    padding: .25rem;
+    border-top: solid 2px #FF00FF;
+    border-bottom: solid 2px #FF00FF;
+    margin: 1rem 0;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #A7FFEB;
+}
+
+/*TODO ==================== FILTRO-CATEGORIA=================== */
+.div-categoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+}
+
+.label-categoria {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.categoriaJuegos {
+    width: 150px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: solid 2px #00FFFF;
+    background-color: #000117;
+    color: #E0F2F1;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    box-shadow: 0 0 10px  #00FFFF;
+}
+
+.categoriaJuegos:focus {
+    outline: none;
+}
+/* ?=========================================== CARDS ================================================= */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-article {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 450px;
+    box-shadow: 5px 5px 10px #E830CE;
+    margin: auto;
+    background-color: #000117;
+    color: #E0F2F1;
+}
+
+.card-header {
+    height: 170px;
+    width: 100%;
+    position: relative;
+    
+}
+
+.card-header img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.card-img-date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000117;
+    width: 50%;
+    padding: .25rem;
+    text-align: center;
+    opacity: 0.7;
+    border-radius: 0 0 5px 0;
+}
+
+.card-main {
+    margin: .25rem .5rem 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-main h2 {
+    font-size: 18px;
+    text-decoration: underline 3px #FF00FF;
+    text-underline-offset: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+.card-main .card-description { 
+    flex-grow: 1;
+}
+
+.card-main p {
+    font-size: 14px;
+    margin: 6px 0 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Nunito', sans-serif;
+}
+.card-info-prices {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.card-price {
+    position: absolute;
+    right: -16px;
+    width: 130px;
+    font-size: 1.75rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    background-color: #b81da3;
+    text-align: center;
+    box-shadow: 5PX 5PX 0PX #E0F2F1;
+}
+
+.card-footer {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-footer button, .btn-registro, .btn-contacto, .btn-agregarJuego { /*TODO<== Botones de REGISTRO y CONTACTO*/
+    color: #E0F2F1;
+    background-color: transparent;
+    padding: 6px 8px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.card-buy, .btn-registro, .btn-contacto, .btn-agregarJuego {  /*TODO<== Botones de REGISTRO y CONTACTO*/
+    border: solid 1px #FF00FF;
+    box-shadow: inset 0 0 18px #FF00FF;
+}
+
+.card-details {
+    border: solid 1px #331fe2;
+    box-shadow: inset 0 0 10px #331fe2;
+}
+
+/* TODO=============================== CARACTERISTICAS ============================== */
+.caracteristicas-container {
+    margin-top: 2rem;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #64FFDA;
+}
+
+.caracteristicas .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem;
+    width: 100px;
+    height: 100px;
+    border: solid 4px #000117;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    color: #000117;
+}
+
+.caracteristicas .descripcion {
+    color: #000117;
+    padding: 0 1rem;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+/* ?============================================================== MAIN-END ============================================================ */
+
+/* TODO========================================================== FOOTER-START ========================================================= */
+.main-footer {
+    background-color: #000117;
+    border-top: solid 2px #EE0E0E;
+}
+
+.footer-info {
+    margin: 1rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.footer-redes {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-redes span {
+    display: none;
+}
+
+.redes-icon {
+    color: #E0F2F1;
+    background-color: #000117;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080, 2px 2px 10px #00000080,
+    2px 2px 3px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080;
+    border-radius: 20px;
+    padding: 16px 20px;
+    animation: animate 3s linear infinite;
+    text-shadow: 0 0 50px #0072FF, 0 0 100px #0072FF, 0 0 150px #0072FF, 0 0 200px #0072FF;
+}
+
+.instagram  {
+    animation-delay: 0.3s;
+}
+
+.facebook {
+    animation-delay: 0.7s;
+}
+
+.youtube {
+    animation-delay: 0.1s;
+}
+
+@keyframes animate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.logo-footer {
+    filter: contrast(170%);
+}
+/* TODO===================================================== FOOTER-END ================================================================ */
+
+/* ?==================================================== REGISTRO Y CONTACTO-START ========================================================== */
+.section-registro {
+    display: flex;
+    justify-content: center;
+}
+
+.container-form, .contact-form {
+    background-color: #000117;
+    padding: 1rem 1.25rem;
+    margin: 40px 1rem;
+    box-shadow: 0 0 8px 2px #b81da3;
+    max-width: 500px;
+    flex-grow: 1; 
+}
+
+.registro-titulo, .contacto-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.formulario label {
+    display: flex;
+    align-items: center;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1)
+}
+
+.formulario input, .formulario select, .formulario textarea {
+    padding: 4px 8px;
+    border-top: solid 2px #FF00FF;
+    border-bottom: solid 2px #FF00FF;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    border-radius: 8px;
+    color: #E0F2F1;
+}
+
+.formulario textarea {
+    resize: none;
+}
+
+.formulario option {
+    background-color: #10002B;
+}
+
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #b81da3;
+}
+
+.formulario i {
+    font-size: 14px;
+    color: red;
+    translate: 5px 2px;
+}
+
+.btn-registro {
+    width: 250px;
+    margin-top: 10px;
+    align-self: center;
+}
+/* !======================================================== CONTACTO =================================================================== */
+.contact-container {
+    display: flex;
+    margin: 2rem auto 0;
+    row-gap: 1.5rem;
+}
+
+.contact-form {
+    margin: 0 auto;
+}
+
+.contact-map {
+    height: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-map iframe {
+    box-shadow: 0 0 10px 1px #b81da3;
+    max-width: 500px;
+    min-height: 300px;
+}
+
+.btn-contacto {
+    width: 200px;
+    margin-top: 1rem;
+    align-self: center;
+}
+/* ?====================================================== REGISTRO Y CONTACTO-END ========================================================== */
+/* TODO=================================================== ACERCA DE NOSOTROS-START ========================================================= */
+.about-us-titulo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    margin-top: 1rem;
+    text-align: center;
+    text-decoration: underline #EE0E0E;
+    text-underline-offset: 8px;
+}
+
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    border: solid 1px #331fe2;
+    box-shadow: inset 0 0 10px 2px #331fe2;
+}
+
+.about-us-img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    max-width: 700px;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: .8rem;
+}
+
+.about-us p {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #00011757;
+    padding: 1.3rem;
+    margin-bottom: 0;
+    line-height: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+.about-us-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem 1rem;
+    border: solid 1px #FF00FF;
+    border-radius: 30px;
+    box-shadow: inset 0 0 12px 2px #b81da3;
+}
+
+.about-us-info img {
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+    border-radius: 50%;
+    border: solid 1px #64FFDA;
+    object-fit: cover;
+}
+
+.about-us-info .info-nombre {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.info-contacto {
+    background-color: #000117;
+    padding: .5rem;
+    box-shadow:  0 0 10px #b81da3;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    min-width: 275px;
+}
+
+.correo {
+    margin-left: 5px;
+}
+/* TODO===================================================== ACERCA DE NOSOTROS-END ========================================================= */
+
+/* !============================================================= MEDIA QUERY =============================================================== */
+@media screen and (width >= 768px){
+    /* !=================== CAROUSEL-START ==================== */
+    .introduccion-div h5 {
+        font-size: 32px;
+        font-weight: 900;
+    }
+
+    .introduccion-div p {
+        font-weight: 600;
+    }
+    /* !==================== CAROUSEL-END ==================== */
+    .div-categoria {
+        justify-content: start;
+    }
+    /* TODO================== FOOTER-START ==================== */
+    .footer-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-redes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-redes {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .footer-redes span {
+        display: inline-block;
+        margin-left: 1rem;
+        font-size: 1rem;
+        color: #E0F2F1;
+    }
+    /* TODO=================== FOOTER-END =================== */
+    /* TODO=============================================== ACERCA DE NOSOTROS ===========================================================*/
+    .about-us p {
+        font-size: 24px;
+        line-height: 30px;
+        padding: 2rem 3rem;
+        font-weight: 800;
+    }
+}
+
+@media screen and (width >= 992px){
+    /* TODO==================== HEADER-START ====================== */
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .main-navbar .nav-link.active {
+        border-radius: 24px 10px 24px 10px;
+        padding: 2px 8px;
+    }
+
+    .nav-item .nav-link {
+        position: relative;
+        display: block;
+        transition: 0.5s;
+    }
+
+    .nav-item .nav-link::after {
+        position: absolute;
+        content: "";
+        width: 80%;
+        height: 2px;
+        top: 100%;
+        left: 10%;
+        transition: transform 0.7s;
+        transform: scaleX(0);
+        transform-origin: right;
+        background-color: #1DE9B6;
+    }
+
+    .nav-item .nav-link {
+        padding-bottom: 0;
+        margin-bottom: 8px;
+    }
+    .nav-item .nav-link:hover:not(.active) {
+        color: #E0F2F1;
+        
+    }
+
+    .nav-item .nav-link:hover:not(.active)::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    /* TODO==================== HEADER-END ========================== */
+    /* !===================== CAROUSEL-START ======================== */
+    .introduccion-div h5 {
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+
+    .introduccion-div p {
+        font-size: 20px;
+    }
+
+    .carousel-inner {
+        box-sizing: border-box;
+        height: 500px;
+    }
+    /* !====================== CAROUSEL-END ======================= */
+    /* ?======================= CARDS START ======================= */
+    .card-details, .card-buy {
+        transition: .5s;
+    }
+    
+    .card-details:hover {
+        box-shadow: inset 0 0 24px #331fe2;
+    }
+
+    .card-buy:hover {
+        box-shadow: inset 0 0 26px #FF00FF;
+    }
+    /* ?======================== CARDS END ======================== */
+
+    /* TODO==================================================== ACERCA DE NOSOTROS ==========================================================*/
+    .about-us-titulo {
+        text-align: left;
+        margin-left: 5%;
+    }
+    
+    .about-us-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .about-us-img {
+        padding: 1rem;
+    }
+}
